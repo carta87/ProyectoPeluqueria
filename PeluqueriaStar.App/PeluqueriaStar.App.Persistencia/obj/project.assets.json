@@ -1763,6 +1763,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "PeluqueriaStar.App.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/PeluqueriaStar.App.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PeluqueriaStar.App.Dominio.dll": {}
+        }
       }
     }
   },
@@ -6031,6 +6041,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "PeluqueriaStar.App.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../PeluqueriaStar.App.Dominio/PeluqueriaStar.App.Dominio.csproj",
+      "msbuildProject": "../PeluqueriaStar.App.Dominio/PeluqueriaStar.App.Dominio.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6038,7 +6053,8 @@
       "Microsoft.EntityFrameworkCore >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0",
-      "Microsoft.EntityFrameworkCore.Tools >= 5.0.0"
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.0",
+      "PeluqueriaStar.App.Dominio >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6072,7 +6088,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo 3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.Dominio\\PeluqueriaStar.App.Dominio.csproj": {
+              "projectPath": "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo 3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.Dominio\\PeluqueriaStar.App.Dominio.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

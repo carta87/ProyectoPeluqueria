@@ -8,5 +8,8 @@ namespace PeluqueriaStar.App.Dominio
 
         public Genero Genero { get; set; }
 
+        public Estelista Estelista { get; set; }
+        public CitaAsignada CitaAsignada { get; set; }
+
     }
 }

@@ -5,5 +5,9 @@ namespace PeluqueriaStar.App.Dominio
          
         public string TarjetaProfesional { get; set;}
 
+        public HorarioEstelista HorarioEstelista { get; set; }
+
+        public ServiciosOfrecer ServiciosOfrecer { get; set; }
+
     }
 }
