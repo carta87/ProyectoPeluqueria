@@ -32,6 +32,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo 3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.Dominio\\PeluqueriaStar.App.Dominio.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo 3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.Dominio\\PeluqueriaStar.App.Dominio.csproj"
+              },
               "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo 3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.Persistencia\\PeluqueriaStar.App.Persistencia.csproj": {
                 "projectPath": "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo 3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.Persistencia\\PeluqueriaStar.App.Persistencia.csproj"
               }

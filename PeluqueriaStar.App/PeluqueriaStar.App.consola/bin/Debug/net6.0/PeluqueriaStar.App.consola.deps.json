@@ -9,6 +9,7 @@
       "PeluqueriaStar.App.consola/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "5.0.0",
+          "PeluqueriaStar.App.Dominio": "1.0.0",
           "PeluqueriaStar.App.Persistencia": "1.0.0"
         },
         "runtime": {

@@ -1,6 +1,6 @@
 namespace PeluqueriaStar.App.Dominio
 {
-    class Membresia
+    public class Membresia
     {
        public int Id { get; set; }   
 

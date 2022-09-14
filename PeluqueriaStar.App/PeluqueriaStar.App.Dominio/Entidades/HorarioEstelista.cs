@@ -1,6 +1,6 @@
 namespace PeluqueriaStar.App.Dominio
 {
-    class HorarioEstelista 
+    public class HorarioEstelista 
     {
     public int Id {get; set; }
    	

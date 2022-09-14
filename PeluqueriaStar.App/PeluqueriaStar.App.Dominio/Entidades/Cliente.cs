@@ -1,6 +1,6 @@
 namespace PeluqueriaStar.App.Dominio
 {
-    class Cliente : Persona
+    public class Cliente : Persona
     {
         public string Dirrecion { get; set; }
         

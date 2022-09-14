@@ -1,6 +1,6 @@
 namespace PeluqueriaStar.App.Dominio
 {
-    enum Genero
+    public enum Genero
     {
         Masculino,
         Femeninio

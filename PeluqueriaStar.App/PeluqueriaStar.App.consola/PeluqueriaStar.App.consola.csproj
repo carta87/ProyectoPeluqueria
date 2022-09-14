@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PeluqueriaStar.App.Persistencia\PeluqueriaStar.App.Persistencia.csproj" />
+    <ProjectReference Include="..\PeluqueriaStar.App.Dominio\PeluqueriaStar.App.Dominio.csproj" />
   </ItemGroup>
 
 </Project>
