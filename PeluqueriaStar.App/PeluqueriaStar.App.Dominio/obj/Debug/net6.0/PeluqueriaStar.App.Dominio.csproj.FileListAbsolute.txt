@@ -10,3 +10,15 @@ C:\Users\USUARIO\Documents\MisionTic\MisionTic ciclo 3\proyecto equipo\proyecto 
 C:\Users\USUARIO\Documents\MisionTic\MisionTic ciclo 3\proyecto equipo\proyecto C#\peluqueria\PeluqueriaStar.App\PeluqueriaStar.App.Dominio\obj\Debug\net6.0\refint\PeluqueriaStar.App.Dominio.dll
 C:\Users\USUARIO\Documents\MisionTic\MisionTic ciclo 3\proyecto equipo\proyecto C#\peluqueria\PeluqueriaStar.App\PeluqueriaStar.App.Dominio\obj\Debug\net6.0\PeluqueriaStar.App.Dominio.pdb
 C:\Users\USUARIO\Documents\MisionTic\MisionTic ciclo 3\proyecto equipo\proyecto C#\peluqueria\PeluqueriaStar.App\PeluqueriaStar.App.Dominio\obj\Debug\net6.0\ref\PeluqueriaStar.App.Dominio.dll
+C:\Users\USUARIO\Documents\MisionTic\MisionTic ciclo3\proyecto equipo\proyecto C#\peluqueria\PeluqueriaStar.App\PeluqueriaStar.App.Dominio\bin\Debug\net6.0\PeluqueriaStar.App.Dominio.deps.json
+C:\Users\USUARIO\Documents\MisionTic\MisionTic ciclo3\proyecto equipo\proyecto C#\peluqueria\PeluqueriaStar.App\PeluqueriaStar.App.Dominio\bin\Debug\net6.0\PeluqueriaStar.App.Dominio.dll
+C:\Users\USUARIO\Documents\MisionTic\MisionTic ciclo3\proyecto equipo\proyecto C#\peluqueria\PeluqueriaStar.App\PeluqueriaStar.App.Dominio\bin\Debug\net6.0\PeluqueriaStar.App.Dominio.pdb
+C:\Users\USUARIO\Documents\MisionTic\MisionTic ciclo3\proyecto equipo\proyecto C#\peluqueria\PeluqueriaStar.App\PeluqueriaStar.App.Dominio\obj\Debug\net6.0\PeluqueriaStar.App.Dominio.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Documents\MisionTic\MisionTic ciclo3\proyecto equipo\proyecto C#\peluqueria\PeluqueriaStar.App\PeluqueriaStar.App.Dominio\obj\Debug\net6.0\PeluqueriaStar.App.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\Documents\MisionTic\MisionTic ciclo3\proyecto equipo\proyecto C#\peluqueria\PeluqueriaStar.App\PeluqueriaStar.App.Dominio\obj\Debug\net6.0\PeluqueriaStar.App.Dominio.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Documents\MisionTic\MisionTic ciclo3\proyecto equipo\proyecto C#\peluqueria\PeluqueriaStar.App\PeluqueriaStar.App.Dominio\obj\Debug\net6.0\PeluqueriaStar.App.Dominio.AssemblyInfo.cs
+C:\Users\USUARIO\Documents\MisionTic\MisionTic ciclo3\proyecto equipo\proyecto C#\peluqueria\PeluqueriaStar.App\PeluqueriaStar.App.Dominio\obj\Debug\net6.0\PeluqueriaStar.App.Dominio.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Documents\MisionTic\MisionTic ciclo3\proyecto equipo\proyecto C#\peluqueria\PeluqueriaStar.App\PeluqueriaStar.App.Dominio\obj\Debug\net6.0\PeluqueriaStar.App.Dominio.dll
+C:\Users\USUARIO\Documents\MisionTic\MisionTic ciclo3\proyecto equipo\proyecto C#\peluqueria\PeluqueriaStar.App\PeluqueriaStar.App.Dominio\obj\Debug\net6.0\refint\PeluqueriaStar.App.Dominio.dll
+C:\Users\USUARIO\Documents\MisionTic\MisionTic ciclo3\proyecto equipo\proyecto C#\peluqueria\PeluqueriaStar.App\PeluqueriaStar.App.Dominio\obj\Debug\net6.0\PeluqueriaStar.App.Dominio.pdb
+C:\Users\USUARIO\Documents\MisionTic\MisionTic ciclo3\proyecto equipo\proyecto C#\peluqueria\PeluqueriaStar.App\PeluqueriaStar.App.Dominio\obj\Debug\net6.0\ref\PeluqueriaStar.App.Dominio.dll

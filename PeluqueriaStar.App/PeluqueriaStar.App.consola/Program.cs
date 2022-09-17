@@ -1,6 +1,7 @@
 ﻿using System;
 using PeluqueriaStar.App.Dominio;
 using PeluqueriaStar.App.Persistencia;
+using System.Collections.Generic;
 
 namespace PeluqueriaStar.App.consola
 {
@@ -29,11 +30,11 @@ namespace PeluqueriaStar.App.consola
                         break;
                     case 2:
                         System.Console.WriteLine("metodo para borrar Cliente");
-                        BorrarCliente(2);
+                        BorrarCliente(7);
                         break;
                     case 3:
                         System.Console.WriteLine("medtodo buscar  Cliente ");
-                        buscarCliente(1);  
+                        buscarCliente(7);  
                         break;
 
                     case 4:
@@ -56,12 +57,12 @@ namespace PeluqueriaStar.App.consola
         {
             var cliente = new Cliente
             {
-                Nombre = "Pepito",
-                Apellidos = "Perez",
+                Nombre = "Gustavo",
+                Apellidos = "Petro",
                 Genero = Genero.Masculino,
                 EstadoSalud = true,
-                Celular = "321555544",
-                Dirrecion = "calle 70 45s sur",
+                Celular = "300000",
+                Dirrecion = "cali",
                 Edad = 45,
                 
                 
@@ -80,8 +81,8 @@ namespace PeluqueriaStar.App.consola
 
 
         private static void buscarCliente(int idCliente){
-            _repocliente.GetCliente(idCliente);
-            System.Console.WriteLine("Cliente encontrado con exito");
+            var cliente =  _repocliente.GetCliente(idCliente);
+            System.Console.WriteLine("Cliente encontrado con exito" + cliente.Id + cliente.Nombre);
 
         }
 

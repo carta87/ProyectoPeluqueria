@@ -10,7 +10,7 @@ using PeluqueriaStar.App.Persistencia;
 namespace PeluqueriaStar.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    [Migration("20220913230829_Entidades")]
+    [Migration("20220915213522_Entidades")]
     partial class Entidades
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using PeluqueriaStar.App.Dominio;
@@ -24,15 +24,10 @@ namespace PeluqueriaStar.App.Persistencia
         void IRepositorioCliente.DeleteCliente(int idCliente)
         {
             var clienteEncontrado = _appContext.Clientes.FirstOrDefault(c => c.Id == idCliente);
-            if(clienteEncontrado != null)
-            {
+            if(clienteEncontrado == null) 
+            return;
               _appContext.Clientes.Remove(clienteEncontrado);
-              _appContext.SaveChanges();
-                          
-            }else
-            {  
-                return;
-            }
+              _appContext.SaveChanges();           
         }
 
         IEnumerable<Cliente> IRepositorioCliente.GetAllClientes()
@@ -41,10 +36,10 @@ namespace PeluqueriaStar.App.Persistencia
         }
 
         Cliente IRepositorioCliente.GetCliente(int idCliente) 
-        {
-            return _appContext
-                  .Clientes
-                  .FirstOrDefault(c => c.Id == idCliente);
+        { 
+            Cliente cliente = new Cliente();
+            cliente = _appContext.Clientes.FirstOrDefault(c => c.Id == idCliente);
+            return cliente;
         }
 
         Cliente IRepositorioCliente.UpdateCliente(Cliente cliente)

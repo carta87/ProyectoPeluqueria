@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VTF2k3XHPSZHM7I2DtA2NhDPJuhCDiOmNXlptYFdwouiDgMSy19otFbQEqpZ6ywjGTLC5YsBhn8vCskuw0yyCw==",
+  "dgSpecHash": "KwTckXByO+doAUgQ4EK48YTqYLubVuoi2bz/LwRzZ+f4AvG1lRXoGJwkGqvYOh7uKaz0R6RxgAcU2BSxhm7geQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo 3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.consola\\PeluqueriaStar.App.consola.csproj",
+  "projectFilePath": "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.consola\\PeluqueriaStar.App.consola.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USUARIO\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

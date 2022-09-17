@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
+    ".NETCoreApp,Version=v3.1": {
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -254,12 +254,12 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
         },
         "compile": {
-          "lib/net5.0/Microsoft.Extensions.DependencyInjection.dll": {
+          "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net5.0/Microsoft.Extensions.DependencyInjection.dll": {
+          "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll": {
             "related": ".xml"
           }
         }
@@ -283,7 +283,8 @@
           "Microsoft.Extensions.DependencyInjection": "5.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
-          "Microsoft.Extensions.Options": "5.0.0"
+          "Microsoft.Extensions.Options": "5.0.0",
+          "System.Diagnostics.DiagnosticSource": "5.0.0"
         },
         "compile": {
           "lib/netstandard2.1/Microsoft.Extensions.Logging.dll": {
@@ -316,12 +317,12 @@
           "Microsoft.Extensions.Primitives": "5.0.0"
         },
         "compile": {
-          "lib/net5.0/Microsoft.Extensions.Options.dll": {
+          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net5.0/Microsoft.Extensions.Options.dll": {
+          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {
             "related": ".xml"
           }
         }
@@ -759,12 +760,12 @@
       "System.Diagnostics.DiagnosticSource/5.0.0": {
         "type": "package",
         "compile": {
-          "lib/net5.0/System.Diagnostics.DiagnosticSource.dll": {
+          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net5.0/System.Diagnostics.DiagnosticSource.dll": {
+          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
             "related": ".xml"
           }
         }
@@ -1754,7 +1755,7 @@
       },
       "PeluqueriaStar.App.Dominio/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETStandard,Version=v2.0",
         "compile": {
           "bin/placeholder/PeluqueriaStar.App.Dominio.dll": {}
         },
@@ -1764,7 +1765,7 @@
       },
       "PeluqueriaStar.App.Persistencia/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
@@ -6033,7 +6034,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0": [
+    ".NETCoreApp,Version=v3.1": [
       "Microsoft.EntityFrameworkCore.Design >= 5.0.0",
       "PeluqueriaStar.App.Dominio >= 1.0.0",
       "PeluqueriaStar.App.Persistencia >= 1.0.0"
@@ -6046,11 +6047,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo 3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.consola\\PeluqueriaStar.App.consola.csproj",
+      "projectUniqueName": "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.consola\\PeluqueriaStar.App.consola.csproj",
       "projectName": "PeluqueriaStar.App.consola",
-      "projectPath": "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo 3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.consola\\PeluqueriaStar.App.consola.csproj",
+      "projectPath": "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.consola\\PeluqueriaStar.App.consola.csproj",
       "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo 3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.consola\\obj\\",
+      "outputPath": "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.consola\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6061,21 +6062,21 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "netcoreapp3.1"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo 3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.Dominio\\PeluqueriaStar.App.Dominio.csproj": {
-              "projectPath": "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo 3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.Dominio\\PeluqueriaStar.App.Dominio.csproj"
+            "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.Dominio\\PeluqueriaStar.App.Dominio.csproj": {
+              "projectPath": "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.Dominio\\PeluqueriaStar.App.Dominio.csproj"
             },
-            "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo 3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.Persistencia\\PeluqueriaStar.App.Persistencia.csproj": {
-              "projectPath": "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo 3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.Persistencia\\PeluqueriaStar.App.Persistencia.csproj"
+            "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.Persistencia\\PeluqueriaStar.App.Persistencia.csproj": {
+              "projectPath": "C:\\Users\\USUARIO\\Documents\\MisionTic\\MisionTic ciclo3\\proyecto equipo\\proyecto C#\\peluqueria\\PeluqueriaStar.App\\PeluqueriaStar.App.Persistencia\\PeluqueriaStar.App.Persistencia.csproj"
             }
           }
         }
@@ -6087,8 +6088,8 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
