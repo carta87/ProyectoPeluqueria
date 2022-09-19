@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace PeluqueriaStar.App.Dominio
 {
     public class Cliente : Persona
@@ -8,8 +11,14 @@ namespace PeluqueriaStar.App.Dominio
 
         public Genero Genero { get; set; }
 
+        public bool Membresia { get; set; }
+
+        public int CantidadCitas { get; set; }
+
         public Estelista Estelista { get; set; }
-        public CitaAsignada CitaAsignada { get; set; }
+        public List<HorarioEstelista> HorarioEstelista { get; set; }
+
+        public List<ServiciosOfrecer>  ServiciosOfrecer { get; set; }
 
     }
 }

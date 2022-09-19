@@ -56,29 +56,29 @@ namespace PeluqueriaStar.App.Persistencia
                 clienteEncontrado.Edad = cliente.Edad;
                 clienteEncontrado.Genero = cliente.Genero;
                 clienteEncontrado.Estelista = cliente.Estelista;
-                clienteEncontrado.CitaAsignada = cliente.CitaAsignada;
+                
                 
 
                 _appContext.SaveChanges();
                 }
                 return clienteEncontrado;
         }
-        /*
-        Medico IRepositorioPaciente.AsignarMedico(int idPaciente, int idMedico)
+        
+        Estelista IRepositorioCliente.AsignarEstelista(int idCliente, int idEstelista)
         {
-            var pacienteEncontrado = _appContext.Pacientes.FirstOrDefault(p => p.Id == idPaciente );
-            if(pacienteEncontrado != null)
+            var clienteEncontrado = _appContext.Clientes.FirstOrDefault(c => c.Id == idCliente );
+            if(clienteEncontrado != null)
             {
-               var medicoEncontrado = _appContext.Medicos.FirstOrDefault(m => m.Id == idMedico);
-               if(medicoEncontrado != null)
+               var estelistaEncontrado = _appContext.Estelista.FirstOrDefault(e => e.Id == idEstelista);
+               if(estelistaEncontrado != null)
                { 
-                 pacienteEncontrado.Medico = medicoEncontrado;
+                 clienteEncontrado.Estelista = estelistaEncontrado;
                  _appContext.SaveChanges();
                }
-               return medicoEncontrado;
+               return estelistaEncontrado;
             }
             return null;
-        }*/
+        }
 
     }
 }

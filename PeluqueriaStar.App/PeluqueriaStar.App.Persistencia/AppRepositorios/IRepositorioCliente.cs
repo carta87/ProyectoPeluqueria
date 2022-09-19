@@ -15,6 +15,6 @@ namespace PeluqueriaStar.App.Persistencia
       void DeleteCliente (int idCliente);
       Cliente  GetCliente (int idCliente);
       
-      //Medico AsignarMedico (int idPaciente, int idMedico);
+      Estelista AsignarEstelista (int idCliente, int idEstelista);
     }
 }

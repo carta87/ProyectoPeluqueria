@@ -15,11 +15,10 @@ namespace PeluqueriaStar.App.Persistencia
 
        public DbSet<HorarioEstelista> HorarioEstelista { get; set; }
 
-       public DbSet<Membresia> Membresia { get; set; }
 
        public DbSet<ServiciosOfrecer> ServiciosOfrecer { get; set; }
 
-       public DbSet<CitaAsignada> CitaAsignada { get; set; }
+       
         
 
         
@@ -30,7 +29,7 @@ namespace PeluqueriaStar.App.Persistencia
         if (!optionsBuilder.IsConfigured)
         {
             optionsBuilder
-            .UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = PeluqueriaStar02");
+            .UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = PeluqueriaStar");
         }
 
     }

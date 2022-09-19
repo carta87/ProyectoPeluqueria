@@ -10,7 +10,7 @@ using PeluqueriaStar.App.Persistencia;
 namespace PeluqueriaStar.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    [Migration("20220915213522_Entidades")]
+    [Migration("20220919014326_Entidades")]
     partial class Entidades
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,31 +21,6 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("PeluqueriaStar.App.Dominio.CitaAsignada", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("FechaCita")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("HorarioCita")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("MembresiaId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MembresiaId");
-
-                    b.ToTable("CitaAsignada");
-                });
-
             modelBuilder.Entity("PeluqueriaStar.App.Dominio.HorarioEstelista", b =>
                 {
                     b.Property<int>("Id")
@@ -53,35 +28,28 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<int?>("ClienteId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Disponibilidad")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("EstelistaId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Fecha")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Horario")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ClienteId");
+
+                    b.HasIndex("EstelistaId");
+
                     b.ToTable("HorarioEstelista");
-                });
-
-            modelBuilder.Entity("PeluqueriaStar.App.Dominio.Membresia", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<bool>("ActivadaMembresia")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("ValorDescuento")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Membresia");
                 });
 
             modelBuilder.Entity("PeluqueriaStar.App.Dominio.Persona", b =>
@@ -92,22 +60,22 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Apellidos")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Celular")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("EstadoSalud")
                         .HasColumnType("bit");
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -125,21 +93,28 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Categoria")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ClienteId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Comentario")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Descripcion")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("EstelistaId")
+                        .HasColumnType("int");
 
                     b.Property<int>("ValorServicio")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ClienteId");
+
+                    b.HasIndex("EstelistaId");
 
                     b.ToTable("ServiciosOfrecer");
                 });
@@ -148,26 +123,24 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                 {
                     b.HasBaseType("PeluqueriaStar.App.Dominio.Persona");
 
-                    b.Property<int?>("CitaAsignadaId")
+                    b.Property<int?>("ClienteId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("EstelistaId")
                         .HasColumnType("int")
-                        .HasColumnName("Administrador_CitaAsignadaId");
+                        .HasColumnName("Administrador_EstelistaId");
 
                     b.Property<int?>("HorarioEstelistaId")
-                        .HasColumnType("int")
-                        .HasColumnName("Administrador_HorarioEstelistaId");
-
-                    b.Property<int?>("MembresiaId")
                         .HasColumnType("int");
 
                     b.Property<int?>("ServiciosOfrecerId")
-                        .HasColumnType("int")
-                        .HasColumnName("Administrador_ServiciosOfrecerId");
+                        .HasColumnType("int");
 
-                    b.HasIndex("CitaAsignadaId");
+                    b.HasIndex("ClienteId");
+
+                    b.HasIndex("EstelistaId");
 
                     b.HasIndex("HorarioEstelistaId");
-
-                    b.HasIndex("MembresiaId");
 
                     b.HasIndex("ServiciosOfrecerId");
 
@@ -178,11 +151,10 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                 {
                     b.HasBaseType("PeluqueriaStar.App.Dominio.Persona");
 
-                    b.Property<int?>("CitaAsignadaId")
+                    b.Property<int>("CantidadCitas")
                         .HasColumnType("int");
 
                     b.Property<string>("Dirrecion")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Edad")
@@ -194,7 +166,8 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                     b.Property<int>("Genero")
                         .HasColumnType("int");
 
-                    b.HasIndex("CitaAsignadaId");
+                    b.Property<bool>("Membresia")
+                        .HasColumnType("bit");
 
                     b.HasIndex("EstelistaId");
 
@@ -205,84 +178,79 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                 {
                     b.HasBaseType("PeluqueriaStar.App.Dominio.Persona");
 
-                    b.Property<int?>("HorarioEstelistaId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ServiciosOfrecerId")
-                        .HasColumnType("int");
-
                     b.Property<string>("TarjetaProfesional")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.HasIndex("HorarioEstelistaId");
-
-                    b.HasIndex("ServiciosOfrecerId");
 
                     b.HasDiscriminator().HasValue("Estelista");
                 });
 
-            modelBuilder.Entity("PeluqueriaStar.App.Dominio.CitaAsignada", b =>
+            modelBuilder.Entity("PeluqueriaStar.App.Dominio.HorarioEstelista", b =>
                 {
-                    b.HasOne("PeluqueriaStar.App.Dominio.Membresia", "Membresia")
-                        .WithMany()
-                        .HasForeignKey("MembresiaId");
+                    b.HasOne("PeluqueriaStar.App.Dominio.Cliente", null)
+                        .WithMany("HorarioEstelista")
+                        .HasForeignKey("ClienteId");
 
-                    b.Navigation("Membresia");
+                    b.HasOne("PeluqueriaStar.App.Dominio.Estelista", null)
+                        .WithMany("HorarioEstelista")
+                        .HasForeignKey("EstelistaId");
+                });
+
+            modelBuilder.Entity("PeluqueriaStar.App.Dominio.ServiciosOfrecer", b =>
+                {
+                    b.HasOne("PeluqueriaStar.App.Dominio.Cliente", null)
+                        .WithMany("ServiciosOfrecer")
+                        .HasForeignKey("ClienteId");
+
+                    b.HasOne("PeluqueriaStar.App.Dominio.Estelista", null)
+                        .WithMany("ServiciosOfrecer")
+                        .HasForeignKey("EstelistaId");
                 });
 
             modelBuilder.Entity("PeluqueriaStar.App.Dominio.Administrador", b =>
                 {
-                    b.HasOne("PeluqueriaStar.App.Dominio.CitaAsignada", "CitaAsignada")
+                    b.HasOne("PeluqueriaStar.App.Dominio.Cliente", "Cliente")
                         .WithMany()
-                        .HasForeignKey("CitaAsignadaId");
+                        .HasForeignKey("ClienteId");
+
+                    b.HasOne("PeluqueriaStar.App.Dominio.Estelista", "Estelista")
+                        .WithMany()
+                        .HasForeignKey("EstelistaId");
 
                     b.HasOne("PeluqueriaStar.App.Dominio.HorarioEstelista", "HorarioEstelista")
                         .WithMany()
                         .HasForeignKey("HorarioEstelistaId");
 
-                    b.HasOne("PeluqueriaStar.App.Dominio.Membresia", "Membresia")
-                        .WithMany()
-                        .HasForeignKey("MembresiaId");
-
                     b.HasOne("PeluqueriaStar.App.Dominio.ServiciosOfrecer", "ServiciosOfrecer")
                         .WithMany()
                         .HasForeignKey("ServiciosOfrecerId");
 
-                    b.Navigation("CitaAsignada");
+                    b.Navigation("Cliente");
+
+                    b.Navigation("Estelista");
 
                     b.Navigation("HorarioEstelista");
-
-                    b.Navigation("Membresia");
 
                     b.Navigation("ServiciosOfrecer");
                 });
 
             modelBuilder.Entity("PeluqueriaStar.App.Dominio.Cliente", b =>
                 {
-                    b.HasOne("PeluqueriaStar.App.Dominio.CitaAsignada", "CitaAsignada")
-                        .WithMany()
-                        .HasForeignKey("CitaAsignadaId");
-
                     b.HasOne("PeluqueriaStar.App.Dominio.Estelista", "Estelista")
                         .WithMany()
                         .HasForeignKey("EstelistaId");
 
-                    b.Navigation("CitaAsignada");
-
                     b.Navigation("Estelista");
+                });
+
+            modelBuilder.Entity("PeluqueriaStar.App.Dominio.Cliente", b =>
+                {
+                    b.Navigation("HorarioEstelista");
+
+                    b.Navigation("ServiciosOfrecer");
                 });
 
             modelBuilder.Entity("PeluqueriaStar.App.Dominio.Estelista", b =>
                 {
-                    b.HasOne("PeluqueriaStar.App.Dominio.HorarioEstelista", "HorarioEstelista")
-                        .WithMany()
-                        .HasForeignKey("HorarioEstelistaId");
-
-                    b.HasOne("PeluqueriaStar.App.Dominio.ServiciosOfrecer", "ServiciosOfrecer")
-                        .WithMany()
-                        .HasForeignKey("ServiciosOfrecerId");
-
                     b.Navigation("HorarioEstelista");
 
                     b.Navigation("ServiciosOfrecer");
