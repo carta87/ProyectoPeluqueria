@@ -16,9 +16,9 @@ namespace PeluqueriaStar.App.Dominio
         public int CantidadCitas { get; set; }
 
         public Estelista Estelista { get; set; }
-        public List<HorarioEstelista> HorarioEstelista { get; set; }
+        public HorarioEstelista HorarioEstelista { get; set; }
 
-        public List<ServiciosOfrecer>  ServiciosOfrecer { get; set; }
+        public ServiciosOfrecer  ServiciosOfrecer { get; set; }
 
     }
 }

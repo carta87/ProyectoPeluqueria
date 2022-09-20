@@ -80,5 +80,51 @@ namespace PeluqueriaStar.App.Persistencia
             return null;
         }
 
+        HorarioEstelista IRepositorioCliente.AsignarHorarioEstelista(int idCliente, int idHorarioEstelista)
+        {   
+            var cantidadCitas =  _appContext.Clientes.FirstOrDefault(c => c.CantidadCitas == idCliente );
+            var clienteEncontrado = _appContext.Clientes.FirstOrDefault(c => c.Id == idCliente );
+
+            if (clienteEncontrado != null)
+            {
+                
+                var  horarioEstelista = _appContext.HorarioEstelista.FirstOrDefault(Horario => Horario.Id == idHorarioEstelista);
+                if(horarioEstelista != null)
+                {
+                 clienteEncontrado.HorarioEstelista = horarioEstelista;
+                 clienteEncontrado.CantidadCitas = clienteEncontrado.CantidadCitas+1;
+
+                 var aprobarMembresia = 5;
+                 if ( clienteEncontrado.CantidadCitas >= aprobarMembresia) 
+                 {
+                    System.Console.WriteLine("se aplicara descuento");
+                    //aprobarMembresia=+5;
+                    clienteEncontrado.Membresia = true;
+                 }
+              
+                 _appContext.SaveChanges();
+                }
+                return horarioEstelista;
+            }
+            return null;
+        }
+        /*
+        IEnumerable<HorarioEstelista> IRepositorioCliente.AsignarHorarioEstelista(int idCliente, int idHorarioEstelista){
+            var clienteEncontrado = _appContext.Clientes.FirstOrDefault(c => c.Id == idCliente);
+            if(clienteEncontrado != null)
+            {
+                var escogerhorario = _appContext.HorarioEstelista.FirstOrDefault( horario => horario.Id == idHorarioEstelista);
+                if(escogerhorario != null)
+                {
+                    clienteEncontrado.HorarioEstelista =escogerhorario;
+                    _appContext.SaveChanges();
+                }
+                return escogerhorario;
+            }
+            return null;
+        }*/
+
+
+
     }
 }

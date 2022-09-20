@@ -20,14 +20,16 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                     Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Administrador_EstelistaId = table.Column<int>(type: "int", nullable: true),
                     ClienteId = table.Column<int>(type: "int", nullable: true),
-                    ServiciosOfrecerId = table.Column<int>(type: "int", nullable: true),
-                    HorarioEstelistaId = table.Column<int>(type: "int", nullable: true),
+                    Administrador_ServiciosOfrecerId = table.Column<int>(type: "int", nullable: true),
+                    Administrador_HorarioEstelistaId = table.Column<int>(type: "int", nullable: true),
                     Dirrecion = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Edad = table.Column<int>(type: "int", nullable: true),
                     Genero = table.Column<int>(type: "int", nullable: true),
                     Membresia = table.Column<bool>(type: "bit", nullable: true),
                     CantidadCitas = table.Column<int>(type: "int", nullable: true),
                     EstelistaId = table.Column<int>(type: "int", nullable: true),
+                    HorarioEstelistaId = table.Column<int>(type: "int", nullable: true),
+                    ServiciosOfrecerId = table.Column<int>(type: "int", nullable: true),
                     TarjetaProfesional = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -62,18 +64,11 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                     Disponibilidad = table.Column<bool>(type: "bit", nullable: false),
                     Fecha = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Horario = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClienteId = table.Column<int>(type: "int", nullable: true),
                     EstelistaId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_HorarioEstelista", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_HorarioEstelista_Persona_ClienteId",
-                        column: x => x.ClienteId,
-                        principalTable: "Persona",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_HorarioEstelista_Persona_EstelistaId",
                         column: x => x.EstelistaId,
@@ -92,18 +87,11 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                     Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ValorServicio = table.Column<int>(type: "int", nullable: false),
                     Comentario = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClienteId = table.Column<int>(type: "int", nullable: true),
                     EstelistaId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ServiciosOfrecer", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ServiciosOfrecer_Persona_ClienteId",
-                        column: x => x.ClienteId,
-                        principalTable: "Persona",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_ServiciosOfrecer_Persona_EstelistaId",
                         column: x => x.EstelistaId,
@@ -111,11 +99,6 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_HorarioEstelista_ClienteId",
-                table: "HorarioEstelista",
-                column: "ClienteId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_HorarioEstelista_EstelistaId",
@@ -126,6 +109,16 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                 name: "IX_Persona_Administrador_EstelistaId",
                 table: "Persona",
                 column: "Administrador_EstelistaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Persona_Administrador_HorarioEstelistaId",
+                table: "Persona",
+                column: "Administrador_HorarioEstelistaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Persona_Administrador_ServiciosOfrecerId",
+                table: "Persona",
+                column: "Administrador_ServiciosOfrecerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Persona_ClienteId",
@@ -148,20 +141,31 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                 column: "ServiciosOfrecerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ServiciosOfrecer_ClienteId",
-                table: "ServiciosOfrecer",
-                column: "ClienteId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ServiciosOfrecer_EstelistaId",
                 table: "ServiciosOfrecer",
                 column: "EstelistaId");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Persona_HorarioEstelista_Administrador_HorarioEstelistaId",
+                table: "Persona",
+                column: "Administrador_HorarioEstelistaId",
+                principalTable: "HorarioEstelista",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Persona_HorarioEstelista_HorarioEstelistaId",
                 table: "Persona",
                 column: "HorarioEstelistaId",
                 principalTable: "HorarioEstelista",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Persona_ServiciosOfrecer_Administrador_ServiciosOfrecerId",
+                table: "Persona",
+                column: "Administrador_ServiciosOfrecerId",
+                principalTable: "ServiciosOfrecer",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
 
@@ -177,16 +181,8 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_HorarioEstelista_Persona_ClienteId",
-                table: "HorarioEstelista");
-
-            migrationBuilder.DropForeignKey(
                 name: "FK_HorarioEstelista_Persona_EstelistaId",
                 table: "HorarioEstelista");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_ServiciosOfrecer_Persona_ClienteId",
-                table: "ServiciosOfrecer");
 
             migrationBuilder.DropForeignKey(
                 name: "FK_ServiciosOfrecer_Persona_EstelistaId",
