@@ -24,10 +24,12 @@ namespace PeluqueriaStar.App.consola
                 System.Console.WriteLine("2. Borrar Cliente ");
                 System.Console.WriteLine("3. buscar  Cliente ");
                 System.Console.WriteLine("4. asignar Estelsita");
-                System.Console.WriteLine("5. asignar uno o varios servicios ");
+                System.Console.WriteLine("5. asignar servicio al cliente ");
                 System.Console.WriteLine("6. lista de Clientes");
                 System.Console.WriteLine("7. asignar horario cita");
-                System.Console.WriteLine("8. salir de APP peluqueria Star\n\n");
+                System.Console.WriteLine("8  lista de cleintes estado menbresia ");
+                System.Console.WriteLine("9  aplicar descuento si aplica");
+                System.Console.WriteLine("10. salir de APP peluqueria Star\n\n");
                 System.Console.WriteLine("    *** Digite una opcion ***\n\n");
                 
                 int opcion = Convert.ToInt32(Console.ReadLine());
@@ -51,8 +53,8 @@ namespace PeluqueriaStar.App.consola
                         AsignarEstelista();
                         break;
                     case 5:
-                         System.Console.WriteLine("metodo para asignar servicos");
-                         //falta implemtarlo
+                         System.Console.WriteLine("metodo para asignar servico");
+                         SeleccionarServicio();
                          break;
                     case 6: 
                         System.Console.WriteLine("metodo para lista de usuarios");
@@ -63,6 +65,14 @@ namespace PeluqueriaStar.App.consola
                         AsignarHorarioEstelista();
                         break;
                     case 8:
+                        System.Console.WriteLine("metodo para selecionar los clientes con menbrecia");
+                        ListaclientesMembresia();
+                        break;
+                    case 9: 
+                        System.Console.WriteLine("metodo para aplicar descuento");
+                        AplicarDescuentocliente();
+                        break;
+                    case 10:
                         System.Console.WriteLine("gracias por usar la aplicacion peluqueria");
                         control = false;
                         break;
@@ -88,6 +98,8 @@ namespace PeluqueriaStar.App.consola
                 Celular = "34400",
                 Dirrecion = "Cucuta",
                 Edad = 45,
+                Membresia = false,
+
                 /*HorarioEstelista = new List<HorarioEstelista>{
                     new HorarioEstelista{Disponibilidad= true, Fecha= "2 agosto", Horario = "12pm" },
                     //new HorarioEstelista{Disponibilidad= true, Fecha= "2 agosto", Horario = "1pm" },
@@ -125,7 +137,7 @@ namespace PeluqueriaStar.App.consola
 
         public static void AsignarEstelista()
         { 
-            var estelista = _repocliente.AsignarEstelista(1,3);
+            var estelista = _repocliente.AsignarEstelista(4,2);
             System.Console.WriteLine(estelista.Nombre + " "+ estelista.Apellidos);
 
         }
@@ -143,10 +155,37 @@ namespace PeluqueriaStar.App.consola
         }
 
         public static void AsignarHorarioEstelista(){
-            var horarioEstelista = _repocliente.AsignarHorarioEstelista(1, 1);
-            System.Console.WriteLine(horarioEstelista.Fecha + " "+ horarioEstelista.Horario);
+            var horarioEstelista = _repocliente.AsignarHorarioEstelista(4, 1);
+            var clienteEscogioHorario = _repocliente.GetCliente(1);
+            System.Console.WriteLine(horarioEstelista.Fecha + " "+ horarioEstelista.Horario + " este es el cliente " +
+                                      clienteEscogioHorario.Nombre);
             //System.Console.WriteLine(estelista.Nombre + " "+ estelista.Apellidos);
 
+
+        }
+        public static void SeleccionarServicio()
+        {
+            var seleccionarServicio = _repocliente.SeleccionarServicio(4,1);
+            var clienteEscogioHorario = _repocliente.GetCliente(1);
+            System.Console.WriteLine(seleccionarServicio.Descripcion +  " este es el cliente " +  clienteEscogioHorario.Nombre);
+
+        }
+
+        public static void ListaclientesMembresia()
+        {
+            bool estado = false;
+            var listaMembrecia = _repocliente.GetClientesMenbresia(estado);
+            foreach (Cliente c in listaMembrecia)
+            {
+                System.Console.WriteLine($"El estado selecionado es {estado}  de menbresia del cliente {c.Nombre} ");
+            }
+
+        }
+
+        public static void  AplicarDescuentocliente()
+        {
+            var aplicarDescuento = _repocliente.AplicarDescuentocliente(4,1);
+            
 
         }
 

@@ -6,6 +6,7 @@ namespace PeluqueriaStar.App.Dominio
    	public string Categoria {get; set; }
    	public string Descripcion{get; set; }
    	public int ValorServicio {get; set; }
+    public int ValorAplicarDescuento {get; set; }
    	public string Comentario {get; set; }
 
     }

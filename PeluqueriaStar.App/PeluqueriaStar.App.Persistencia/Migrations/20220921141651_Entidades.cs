@@ -86,6 +86,7 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                     Categoria = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ValorServicio = table.Column<int>(type: "int", nullable: false),
+                    ValorAplicarDescuento = table.Column<int>(type: "int", nullable: false),
                     Comentario = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EstelistaId = table.Column<int>(type: "int", nullable: true)
                 },

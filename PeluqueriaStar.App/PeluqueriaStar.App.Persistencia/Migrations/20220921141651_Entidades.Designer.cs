@@ -10,7 +10,7 @@ using PeluqueriaStar.App.Persistencia;
 namespace PeluqueriaStar.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    [Migration("20220919204118_Entidades")]
+    [Migration("20220921141651_Entidades")]
     partial class Entidades
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -97,6 +97,9 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("EstelistaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ValorAplicarDescuento")
                         .HasColumnType("int");
 
                     b.Property<int>("ValorServicio")

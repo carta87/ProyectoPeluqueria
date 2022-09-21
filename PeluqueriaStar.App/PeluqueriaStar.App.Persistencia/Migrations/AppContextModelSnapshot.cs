@@ -97,6 +97,9 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                     b.Property<int?>("EstelistaId")
                         .HasColumnType("int");
 
+                    b.Property<int>("ValorAplicarDescuento")
+                        .HasColumnType("int");
+
                     b.Property<int>("ValorServicio")
                         .HasColumnType("int");
 
