@@ -25,10 +25,9 @@ namespace PeluqueriaStar.App.Persistencia
 
       ServiciosOfrecer AplicarDescuentocliente(int idCliente, int idServico);
 
+      IEnumerable<HorarioEstelista> GetListaHorarioDisponible ();
+
       //HorarioEstelista AsignarHorarioEstelista(int idCliente, int idHorarioEstelista);
-
-
-      //IEnumerable<HorarioEstelista> AsignarHorarioEstelista (int idCliente, int idHorarioEstelista);
 
       
     }

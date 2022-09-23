@@ -90,6 +90,7 @@ namespace PeluqueriaStar.App.Persistencia
                     var cantidadCitas = _appContext.Clientes.FirstOrDefault(c => c.CantidadCitas == idCliente);
                     clienteEncontrado.HorarioEstelista = horarioEstelista;
                     clienteEncontrado.CantidadCitas = clienteEncontrado.CantidadCitas + 1;
+                    horarioEstelista.Disponibilidad = true;
 
                     var aprobarMembresia = 5;
                     if (clienteEncontrado.CantidadCitas >= aprobarMembresia)
@@ -160,21 +161,11 @@ namespace PeluqueriaStar.App.Persistencia
          }
 
 
-        /*
-        IEnumerable<HorarioEstelista> IRepositorioCliente.AsignarHorarioEstelista(int idCliente, int idHorarioEstelista){
-            var clienteEncontrado = _appContext.Clientes.FirstOrDefault(c => c.Id == idCliente);
-            if(clienteEncontrado != null)
-            {
-                var escogerhorario = _appContext.HorarioEstelista.FirstOrDefault( horario => horario.Id == idHorarioEstelista);
-                if(escogerhorario != null)
-                {
-                    clienteEncontrado.HorarioEstelista =escogerhorario;
-                    _appContext.SaveChanges();
-                }
-                return escogerhorario;
-            }
-            return null;
-        }*/
+        
+        IEnumerable<HorarioEstelista> IRepositorioCliente.GetListaHorarioDisponible(){
+            
+            return _appContext.HorarioEstelista.Where(hor => hor.Disponibilidad == false) ;
+        }
 
     }
 }
