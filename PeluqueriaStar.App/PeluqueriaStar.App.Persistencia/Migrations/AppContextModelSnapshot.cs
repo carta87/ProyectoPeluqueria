@@ -58,6 +58,9 @@ namespace PeluqueriaStar.App.Persistencia.Migrations
                     b.Property<string>("Celular")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Contrasena")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Discriminator")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

@@ -29,7 +29,7 @@ namespace PeluqueriaStar.App.Persistencia
         if (!optionsBuilder.IsConfigured)
         {
             optionsBuilder
-            .UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = PeluqueriaStar01");
+            .UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = PeluqueriaStar");
         }
 
     }

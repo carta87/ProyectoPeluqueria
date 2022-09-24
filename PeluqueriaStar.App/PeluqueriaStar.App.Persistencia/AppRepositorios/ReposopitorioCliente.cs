@@ -160,12 +160,22 @@ namespace PeluqueriaStar.App.Persistencia
             return null;
          }
 
-
-        
         IEnumerable<HorarioEstelista> IRepositorioCliente.GetListaHorarioDisponible(){
             
             return _appContext.HorarioEstelista.Where(hor => hor.Disponibilidad == false) ;
         }
 
+        bool IRepositorioCliente.ValidarContrasenaPersona(string email, string contasena)
+        {
+            var clienteEncontradoEmail = _appContext.Persona.FirstOrDefault(p => p.Email == email );
+            if(clienteEncontradoEmail != null)
+            {
+                var clienteEncontradoContrasena = _appContext.Persona.FirstOrDefault(p => p.Contrasena == contasena );
+                
+                return clienteEncontradoContrasena != null? true: false;
+                
+            }
+            return false;
+        }
     }
 }

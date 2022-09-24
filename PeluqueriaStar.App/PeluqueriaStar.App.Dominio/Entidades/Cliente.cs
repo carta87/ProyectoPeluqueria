@@ -9,6 +9,7 @@ namespace PeluqueriaStar.App.Dominio
         
         public int  Edad { get; set; }
 
+
         public Genero Genero { get; set; }
 
         public bool Membresia { get; set; }

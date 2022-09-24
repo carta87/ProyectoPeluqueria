@@ -27,6 +27,8 @@ namespace PeluqueriaStar.App.Persistencia
 
       IEnumerable<HorarioEstelista> GetListaHorarioDisponible ();
 
+      bool ValidarContrasenaPersona(string email, string contasena);
+
       //HorarioEstelista AsignarHorarioEstelista(int idCliente, int idHorarioEstelista);
 
       

@@ -15,21 +15,22 @@ namespace PeluqueriaStar.App.consola
         static void Main(string[] args)
         {
             bool control = true;
-            while (true)
+            while (control)
             {
                 System.Console.WriteLine("### Bienvenido al programa probar peluqueria###");
                 System.Console.WriteLine("         ### CRUD  Clientes  ####/n                   ");
-                System.Console.WriteLine("1. Adicionar Cliente ");
-                System.Console.WriteLine("2. buscar  Cliente ");
-                System.Console.WriteLine("3. Borrar Cliente ");
-                System.Console.WriteLine("4. lista de Clientes");         
-                System.Console.WriteLine("5. lista de horarios Disponibles");
-                System.Console.WriteLine("6. asignar horario cita");
-                System.Console.WriteLine("7. asignar Estelsita");
-                System.Console.WriteLine("8. asignar servicio al cliente ");
-                System.Console.WriteLine("9  lista de cleintes estado menbresia ");
-                System.Console.WriteLine("10  aplicar descuento si aplica");
-                System.Console.WriteLine("11. salir de APP peluqueria Star\n\n");
+                System.Console.WriteLine("1.  Adicionar Cliente ");
+                System.Console.WriteLine("2.  Buscar  Cliente ");
+                System.Console.WriteLine("3.  Borrar Cliente ");
+                System.Console.WriteLine("4.  Lista de Clientes");         
+                System.Console.WriteLine("5.  Lista de horarios Disponibles");
+                System.Console.WriteLine("6.  Asignar horario cita");
+                System.Console.WriteLine("7.  Asignar Estelsita");
+                System.Console.WriteLine("8.  Asignar servicio al cliente ");
+                System.Console.WriteLine("9   Lista de cleintes estado menbresia ");
+                System.Console.WriteLine("10  Aplicar descuento si aplica");
+                System.Console.WriteLine("11  Validar contraseña");
+                System.Console.WriteLine("12. Salir de APP peluqueria Star\n\n");
                 System.Console.WriteLine("    *** Digite una opcion ***\n\n");
                 
                 int opcion = Convert.ToInt32(Console.ReadLine());
@@ -45,13 +46,13 @@ namespace PeluqueriaStar.App.consola
                         break;
                     case 2:
                         System.Console.WriteLine("medtodo buscar  Cliente ");
-                        System.Console.WriteLine("indique el numero ID de  cliente a buscar");
+                        System.Console.WriteLine("Indique el numero ID de  cliente a buscar");
                         numeroEscogido = Convert.ToInt32(Console.ReadLine());
                         buscarCliente(numeroEscogido);  
                         break;
                     case 3:
                         System.Console.WriteLine("metodo para borrar Cliente");
-                        System.Console.WriteLine("indique el numero ID de  cliente a borrar");
+                        System.Console.WriteLine("Indique el numero ID de  cliente a borrar");
                         numeroEscogido = Convert.ToInt32(Console.ReadLine());
                         BorrarCliente(numeroEscogido);  
                         break;
@@ -65,25 +66,25 @@ namespace PeluqueriaStar.App.consola
                          break;
                     case 6: 
                         System.Console.WriteLine("metodo para asignar cita");
-                        System.Console.WriteLine("indique el numero ID de  cliente a buscar");
+                        System.Console.WriteLine("Indique el numero ID de  cliente a buscar");
                         numClienteId = Convert.ToInt32(Console.ReadLine());
-                        System.Console.WriteLine("indique el numero ID de  Estelista a buscar");
+                        System.Console.WriteLine("Indique el numero ID de  Estelista a buscar");
                         numEstelistaId = Convert.ToInt32(Console.ReadLine());
                         AsignarHorarioEstelista( numClienteId, numEstelistaId );  
                         break;
                     case 7:
                         System.Console.WriteLine("metodo para asignar estelsita");
-                        System.Console.WriteLine("indique el numero ID de  cliente a buscar");
+                        System.Console.WriteLine("Indique el numero ID de  cliente a buscar");
                         numClienteId = Convert.ToInt32(Console.ReadLine());
-                        System.Console.WriteLine("indique el numero ID de  Estelista a buscar");
+                        System.Console.WriteLine("Indique el numero ID de  Estelista a buscar");
                         numEstelistaId = Convert.ToInt32(Console.ReadLine());
                         AsignarEstelista(numClienteId, numEstelistaId);
                         break;
                     case 8:
                          System.Console.WriteLine("metodo para asignar servico");
-                         System.Console.WriteLine("indique el numero ID de  cliente a buscar");
+                         System.Console.WriteLine("Indique el numero ID de  cliente a buscar");
                          numClienteId = Convert.ToInt32(Console.ReadLine());
-                         System.Console.WriteLine("indique el numero ID del servicio");
+                         System.Console.WriteLine("Indique el numero ID del servicio");
                          int numeroServicioId = Convert.ToInt32(Console.ReadLine());
                         SeleccionarServicio(numClienteId, numeroServicioId);
                         break;
@@ -97,18 +98,26 @@ namespace PeluqueriaStar.App.consola
                         break;
                     case 10:
                         System.Console.WriteLine("metodo para aplicar descuento");
-                        System.Console.WriteLine("ingrese el numero de Id Cliente");
+                        System.Console.WriteLine("Ingrese el numero de Id Cliente");
                         numClienteId = Convert.ToInt32(Console.ReadLine());
                         System.Console.WriteLine("Ingrese El Id Servico");
                         int numeroIdServicio = Convert.ToInt32(Console.ReadLine());
                         AplicarDescuentocliente(numClienteId, numeroIdServicio);
                         break;
                     case 11:
-                        System.Console.WriteLine("gracias por usar la aplicacion peluqueria");
+                        System.Console.WriteLine("metodo para validar contraseña");
+                        System.Console.WriteLine("Ingrese el Email ");
+                        string emailCliente = Console.ReadLine();
+                        System.Console.WriteLine("Ingrese la contraseña ");
+                        string contrasenaCliente = Console.ReadLine();
+                        ValidarContrasenaPersona(emailCliente, contrasenaCliente);
+                        break;
+                    case 12:
+                        System.Console.WriteLine("Gracias por usar la aplicacion peluqueria");
                         control = false;
                         break;
                     default:
-                        System.Console.WriteLine("opcion Incorecta, digite nuevamente");
+                        System.Console.WriteLine("Opcion Incorecta, Digite nuevamente");
                         break;
                 }
 
@@ -130,6 +139,10 @@ namespace PeluqueriaStar.App.consola
             string dirreccion = Console.ReadLine();
             System.Console.WriteLine("Ingrese Edad ");
             int edad = Convert.ToInt32(Console.ReadLine()); 
+            System.Console.WriteLine("Ingrese Email");
+            string email = Console.ReadLine();
+            System.Console.WriteLine("Ingrese Contraseña");
+            string contrasena = Console.ReadLine();
     
             //se crea objecto para asignar los datos que corresponden   
             var cliente = new Cliente
@@ -141,7 +154,10 @@ namespace PeluqueriaStar.App.consola
                 Celular = celular,
                 Dirrecion = dirreccion,
                 Edad = edad,
+                Email = email,
+                Contrasena = contrasena,
                 Membresia = false,
+                
                 /*   //prueba para asignarle horario y servicio 
                 HorarioEstelista = new List<HorarioEstelista>{
                     new HorarioEstelista{Disponibilidad= true, Fecha= "2 agosto", Horario = "12pm" },
@@ -159,7 +175,7 @@ namespace PeluqueriaStar.App.consola
 
             System.Console.WriteLine("Desea asignar membresia /n 1. Si /n2. no");
             string menbrecia = Convert.ToString(Console.ReadLine());
-            bool menbrecia2 = menbrecia == "1" ? cliente.Membresia == true: cliente.Membresia== false;
+            bool menbrecia2 = menbrecia == "1" ? cliente.Membresia = true: cliente.Membresia= false;
 
             _repocliente.AddCliente(cliente);
             System.Console.WriteLine($"El Cleinte {cliente.Nombre} {cliente.Apellidos} ha sido Agregado con exito");
@@ -244,6 +260,14 @@ namespace PeluqueriaStar.App.consola
             var aplicarDescuento = _repocliente.AplicarDescuentocliente(idCliente, idServicio);
             
 
+        }
+
+        public static void ValidarContrasenaPersona(string email, string contasena)
+        {
+            var respuesta = _repocliente.ValidarContrasenaPersona(email, contasena);
+            if(respuesta) System.Console.WriteLine("Constraña correcta");
+            else System.Console.WriteLine("Constraña Incorrecta"); 
+            
         }
         
 
